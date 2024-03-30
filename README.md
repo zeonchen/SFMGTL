@@ -1,2 +1,2 @@
-# SF-HGTL
-This is the repository for paper ''Cross-City Traffic Prediction via Semantic-Fused Hierarchical Graph Transfer Learning'', and the code will be released soon.
+# SFMGTL
+This is the repository for paper ''Semantic-Fused Multi-Granularity Cross-City Traffic Prediction'' published in Transportation Research Part C, and the code will be released soon.
