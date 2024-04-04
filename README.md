@@ -5,6 +5,14 @@ This is the repository for the paper named ''Semantic-Fused Multi-Granularity Cr
 
 ## Model Training and Testing
 
+Before training the model, you need to install the dependencies:
+
+```shell
+pip install -r requirements.txt
+```
+
+
+
 The dataset can be acquired in the *data/dataset.zip*, just upzip it for using. Both training and testing functions are in *main.py* file, and you can directly run it by:
 
 ```shell
