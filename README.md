@@ -23,5 +23,14 @@ python main.py --scity 'NY' --tcity 'DC' --datatype 'pickup' --batch_size 64 --s
 
 ### Cite the paper as follows:
 
-    @
+    @misc{Chen2023semantic-fused,
+        title={Semantic-Fused Multi-Granularity Cross-City Traffic Prediction},
+        howpublished = "\url{https://synthical.com/article/9354d9e3-94cc-4b65-a3fd-8bde3f225701}",
+        author={Kehua Chen and Yuxuan Liang and Jindong Han},
+        year={2023},
+        month={1},
+        eprint={2302.11774},
+        archivePrefix={arXiv},
+        primaryClass={cs.LG}
+    }
 
