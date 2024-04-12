@@ -23,6 +23,8 @@ python main.py --scity 'NY' --tcity 'DC' --datatype 'pickup' --batch_size 64 --s
 
 ### Cite the paper as follows:
 
+[Elsevier Version](https://www.sciencedirect.com/science/article/pii/S0968090X24001256)  [Arxiv Version](https://arxiv.org/abs/2302.11774)
+
     @article{chen2024semantic,
       title={Semantic-fused multi-granularity cross-city traffic prediction},
       author={Chen, Kehua and Liang, Yuxuan and Han, Jindong and Feng, Siyuan and Zhu, Meixin and Yang, Hai},
