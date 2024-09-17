@@ -136,7 +136,12 @@ def train(args):
     source_loss_list = []
     target_loss_list = []
 
-    for epoch in range(50):
+    if args.train_days == 1:
+        all_epoch = 15
+    else:
+        all_epoch = 50
+
+    for epoch in range(all_epoch):
         source_loss, acc_list, ad_list = train_epoch(net, s_adj1, s_adj2, s_adj3, t_adj1, t_adj2, t_adj3,
                                   loader, t_loader, optim, s_mask=s_mask, t_mask=t_mask)
         avg_source_loss = np.mean(source_loss)
@@ -208,7 +213,7 @@ if __name__ == '__main__':
     parser.add_argument('--datatype', type=str, default='pickup', help='Within [pickup, dropoff]')
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--seed', type=int, default=12)
-    parser.add_argument('--train_days', type=int, default=7)
+    parser.add_argument('--train_days', type=int, default=3)
     parser.add_argument('--pred_lag', type=int, default=1)
     parser.add_argument('--hidden_dim', type=int, default=32)
     args = parser.parse_args()

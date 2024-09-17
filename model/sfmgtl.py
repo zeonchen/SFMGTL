@@ -357,24 +357,14 @@ class SFMGTL(nn.Module):
 
         self.s_diffpool = DiffPool(input_dim=hidden_dim, hidden_dim=hidden_dim).to(device)
         self.t_diffpool = DiffPool(input_dim=hidden_dim, hidden_dim=hidden_dim).to(device)
-        self.s_head = nn.Sequential(nn.Linear(hidden_dim, hidden_dim),
-                                    nn.LeakyReLU(),
-                                    nn.Linear(hidden_dim, 1))
-        self.s_head_zone = nn.Sequential(nn.Linear(hidden_dim, hidden_dim),
-                                         nn.LeakyReLU(),
-                                         nn.Linear(hidden_dim, 1))
-        self.s_head_semantic = nn.Sequential(nn.Linear(hidden_dim, hidden_dim),
-                                             nn.LeakyReLU(),
-                                             nn.Linear(hidden_dim, 1))
-        self.t_head = nn.Sequential(nn.Linear(hidden_dim, hidden_dim),
-                                    nn.LeakyReLU(),
-                                    nn.Linear(hidden_dim, 1))
-        self.t_head_zone = nn.Sequential(nn.Linear(hidden_dim, hidden_dim),
-                                         nn.LeakyReLU(),
-                                         nn.Linear(hidden_dim, 1))
-        self.t_head_semantic = nn.Sequential(nn.Linear(hidden_dim, hidden_dim),
-                                             nn.LeakyReLU(),
-                                             nn.Linear(hidden_dim, 1))
+
+        self.s_head = nn.Linear(hidden_dim, 1)
+        self.s_head_zone = nn.Linear(hidden_dim, 1)
+        self.s_head_semantic = nn.Linear(hidden_dim, 1)
+
+        self.t_head = nn.Linear(hidden_dim, 1)
+        self.t_head_zone = nn.Linear(hidden_dim, 1)
+        self.t_head_semantic = nn.Linear(hidden_dim, 1)
 
         # Common Knowledge
         self.common_attention = nn.ModuleList()
@@ -383,7 +373,7 @@ class SFMGTL(nn.Module):
             self.common_attention.append(nn.Linear(hidden_dim, hidden_dim, bias=False).to(device))
             self.common_attention.append(nn.Linear(hidden_dim, hidden_dim, bias=False).to(device))
 
-        self.knowledge_number = 3
+        self.knowledge_number = 10
         self.node_knowledge = nn.Parameter(torch.randn(self.knowledge_number, hidden_dim)).to('cuda:0')
         self.zone_knowledge = nn.Parameter(torch.randn(self.knowledge_number, hidden_dim)).to('cuda:0')
         self.semantic_knowledge = nn.Parameter(torch.randn(self.knowledge_number, hidden_dim)).to('cuda:0')
